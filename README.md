@@ -40,7 +40,9 @@ EOF
 
 Generate the token
 ```bash
-curl https://jwks-service.appspot.com/token -X POST -H content-type:application/json -d @token_request_payload.json > token.txt
+curl -X POST -H content-type:application/json \
+  https://jwks-service.appspot.com/token \
+  -d @token_request_payload.json > token.txt
 ```
 
 Create the `input.json` for the OPA eval query
