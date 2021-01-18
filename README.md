@@ -9,20 +9,20 @@ The organization of the policy rules and data will follow the OPA [Bundle File F
 
 ### Get the JWKS 
 Retrive the JKWS from the sample service and save as data in the OPA bundle hierarchy as `jwks/data.json`
-```
+```bash
 curl https://jwks-service.appspot.com/.well-known/jwks.json -o bundle/jwks/data.json
 ```
 
 ### Generate a RS512 Token
 You can generate a token via the web UI at https://jwks-service.appspot.com or via the following commands:
-```
+```bash
 # As the service hosts multiple RSA keys, retrieve the first one:
 export RSA_KEYID=$(curl https://jwks-service.appspot.com/keyids\?type\=rsa | jq -r '.ids[0]')
 echo $RSA_KEYID
 ```
 
 Create the payload for the token creation request
-```
+```bash
 cat <<EOF > token_request_payload.json
 {
   "keyid": "${RSA_KEYID}",
@@ -39,12 +39,12 @@ EOF
 ```
 
 Generate the token
-```
+```bash
 curl https://jwks-service.appspot.com/token -X POST -H content-type:application/json -d @token_request_payload.json > token.txt
 ```
 
 Create the `input.json` for the OPA eval query
-```
+```bash
 cat <<EOF > input.json
 {
   "jwt": "$(cat token.txt)",
@@ -53,7 +53,7 @@ EOF
 ```
 
 ## Test the Policy
-```
+```bash
 # Verify the Signature only
 opa eval -b ./bundle -i input.json 'data.rules.verify_output'
 # result will contain `true`
