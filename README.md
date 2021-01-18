@@ -2,7 +2,7 @@
 
 An example policy showing JSON Web Key Sets (JWKS) based validation of JSON Web Tokens (JWT) using the OPA [Token Verification](https://www.openpolicyagent.org/docs/latest/policy-reference/#token-verification) built-in functions .  
 
-For simplicity, this example uses JWKS and JWT values generated with the sample JWKS service at: https://jwks-service.appspot.com/.  You can substitute your own values as appropriate for your environment.
+For simplicity, this example uses JWKS and JWT values generated with the sample JWKS service at: https://jwks-service.appspot.com.  You can substitute your own values as appropriate for your environment.
 
 ## Setup
 The organization of the policy rules and data will follow the OPA [Bundle File Format](https://www.openpolicyagent.org/docs/latest/management/#bundle-file-format)
