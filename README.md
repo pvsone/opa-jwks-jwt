@@ -55,7 +55,7 @@ EOF
 ```
 
 ## Exercise the Policy
-The policy file [bundle/rules/rules.rego](bundle/rules/rules.rego) contains example usage of the built-in functions for JWT verification and decoding.  Assuming the `data.json` and `input.json` files have been placed in the correct directories (per the above commands), you will be able to evaluate the policy rules and see valid results.
+The policy file [bundle/rules/rules.rego](bundle/rules/rules.rego) contains example usage of built-in functions for JWT verification and decoding.  Assuming the `data.json` and `input.json` files have been placed in the correct directories (per the above commands), you will be able to evaluate the policy rules and see valid results.
 
 ```bash
 # Verify the Signature only
