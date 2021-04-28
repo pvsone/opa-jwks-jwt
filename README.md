@@ -5,7 +5,7 @@ An example policy showing JSON Web Key Sets (JWKS) based validation of JSON Web 
 For simplicity, this example uses JWKS and JWT values generated with the sample JWKS service at: https://jwks-service.appspot.com.  You can substitute your own values as appropriate for your environment.
 
 ## Setup
-The organization of the policy rules and data will follow the OPA [Bundle File Format](https://www.openpolicyagent.org/docs/latest/management/#bundle-file-format)
+The organization of the policy rules and data will follow the OPA [Bundle File Format](https://www.openpolicyagent.org/docs/latest/management-bundles/#bundle-file-format)
 
 ### Get the JWKS 
 Retrive the JKWS from the sample service and save as data in the OPA bundle hierarchy as `jwks/data.json`
